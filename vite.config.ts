@@ -36,6 +36,9 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
+  worker: {
+    format: "es",
+  },
   server: {
     // so the browser can call the Deno API during dev
     proxy: {
