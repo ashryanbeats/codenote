@@ -35,18 +35,18 @@ class GhostWidget extends WidgetType {
     super();
   }
 
-  eq(other: GhostWidget) {
+  override eq(other: GhostWidget) {
     return this.text === other.text;
   }
 
-  toDOM() {
+  override toDOM() {
     const span = document.createElement("span");
     span.className = "cm-ghostText";
     span.textContent = this.text;
     return span;
   }
 
-  ignoreEvent() {
+  override ignoreEvent() {
     return true;
   }
 }

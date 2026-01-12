@@ -178,11 +178,6 @@ export async function handleApi(req: Request): Promise<Response | null> {
         choiceText ??
         "";
 
-      const isIncomplete =
-        (data as { status?: string })?.status === "incomplete" &&
-        (data as { incomplete_details?: { reason?: string } })?.incomplete_details
-          ?.reason === "max_output_tokens";
-
       if (!outputText.trim()) {
         console.warn("OpenAI returned empty output", {
           model,

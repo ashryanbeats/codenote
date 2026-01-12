@@ -13,7 +13,6 @@ import type { Project } from "./types.ts";
 import { Button } from "@/components/ui/button.tsx";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
@@ -432,19 +431,6 @@ function ProjectView() {
       flushRef.current("unmount");
     };
   }, []);
-
-  const saveStatusLabel = (() => {
-    switch (saveState) {
-      case "saving":
-        return "Saving...";
-      case "error":
-        return "Save failed";
-      case "conflict":
-        return "Conflict";
-      default:
-        return "All changes auto-saved";
-    }
-  })();
 
   const handleRestore = () => {
     if (!restoreDraft) return;
